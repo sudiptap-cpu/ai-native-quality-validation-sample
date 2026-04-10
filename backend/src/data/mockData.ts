@@ -100,7 +100,7 @@ export const mockUsers = [
     password: bcrypt.hashSync('password123', 10),
     firstName: 'Mayank',
     lastName: 'Bhola',
-    avatar: 'https://i.pravatar.cc/150?img=70',
+    avatar: 'https://i.pravatar.cc/150?img=68',
     phone: '+1-555-0997',
     bio: 'LambdaTest admin account with full access privileges for testing and management.',
     isHost: true,

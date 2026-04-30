@@ -343,7 +343,8 @@ const SearchBar = ({ onSearch, initialFilters }: SearchBarProps) => {
                     </span>
                     <button
                       onClick={() => setAdults(adults + 1)}
-                      className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-gray-900 transition"
+                      disabled={totalGuests >= 16}
+                      className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-gray-900 disabled:opacity-30 disabled:cursor-not-allowed transition"
                     >
                       <span className="text-gray-600">+</span>
                     </button>
@@ -370,7 +371,7 @@ const SearchBar = ({ onSearch, initialFilters }: SearchBarProps) => {
                     </span>
                     <button
                       onClick={() => setChildren(children + 1)}
-                      disabled={adults === 0}
+                      disabled={adults === 0 || totalGuests >= 16}
                       className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-gray-900 disabled:opacity-30 disabled:cursor-not-allowed transition"
                     >
                       <span className="text-gray-600">+</span>

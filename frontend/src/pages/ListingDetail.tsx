@@ -281,7 +281,7 @@ const ListingDetail = () => {
                   onChange={(e) => setGuests(parseInt(e.target.value))}
                   className="w-full text-sm outline-none"
                 >
-                  {Array.from({ length: listing.maxGuests }, (_, i) => i + 1).map(
+                  {Array.from({ length: Math.min(listing.maxGuests, 16) }, (_, i) => i + 1).map(
                     (num) => (
                       <option key={num} value={num}>
                         {num} guest{num > 1 ? 's' : ''}

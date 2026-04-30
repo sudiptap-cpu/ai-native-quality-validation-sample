@@ -18,6 +18,12 @@ export const createBooking = async (
       return;
     }
 
+    // Check absolute guest limit
+    if (guests > 16) {
+      res.status(400).json({ error: 'Maximum 16 guests allowed' });
+      return;
+    }
+
     // Check guest capacity
     if (guests > listing.maxGuests) {
       res.status(400).json({

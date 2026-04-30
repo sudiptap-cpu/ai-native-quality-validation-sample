@@ -42,6 +42,7 @@ const bookingSchema = new Schema<IBookingDocument>(
       type: Number,
       required: [true, 'Number of guests is required'],
       min: 1,
+      max: 16,
     },
     totalPrice: {
       type: Number,

@@ -7,7 +7,8 @@
     "dev": "nodemon src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "seed": "ts-node src/utils/seedData.ts"
+    "seed": "ts-node src/utils/seedData.ts",
+    "test": "jest --runInBand"
   },
   "keywords": ["airbnb", "api", "typescript"],
   "author": "",
@@ -33,6 +34,12 @@
     "@faker-js/faker": "^8.3.1",
     "typescript": "^5.3.3",
     "ts-node": "^10.9.2",
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "jest": "^29.7.0",
+    "pactum": "^3.7.1",
+    "@types/jest": "^29.5.11",
+    "babel-jest": "^29.7.0",
+    "@babel/core": "^7.23.7",
+    "@babel/preset-env": "^7.23.7"
   }
 }

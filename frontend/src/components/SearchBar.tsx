@@ -324,7 +324,15 @@ const SearchBar = ({ onSearch, initialFilters }: SearchBarProps) => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <button
-                      onClick={() => setAdults(Math.max(0, adults - 1))}
+                      onClick={() => {
+                        const newAdults = Math.max(0, adults - 1);
+                        setAdults(newAdults);
+                        if (newAdults === 0) {
+                          setChildren(0);
+                          setInfants(0);
+                          setPets(0);
+                        }
+                      }}
                       disabled={adults === 0}
                       className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-gray-900 disabled:opacity-30 disabled:cursor-not-allowed transition"
                     >
@@ -347,6 +355,7 @@ const SearchBar = ({ onSearch, initialFilters }: SearchBarProps) => {
                   <div>
                     <p className="text-sm font-semibold text-gray-900">Children</p>
                     <p className="text-xs text-gray-500">Ages 2–12</p>
+                    {adults === 0 && <p className="text-xs text-red-500 mt-0.5">Add an adult first</p>}
                   </div>
                   <div className="flex items-center space-x-3">
                     <button
@@ -361,7 +370,8 @@ const SearchBar = ({ onSearch, initialFilters }: SearchBarProps) => {
                     </span>
                     <button
                       onClick={() => setChildren(children + 1)}
-                      className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-gray-900 transition"
+                      disabled={adults === 0}
+                      className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-gray-900 disabled:opacity-30 disabled:cursor-not-allowed transition"
                     >
                       <span className="text-gray-600">+</span>
                     </button>
@@ -373,6 +383,7 @@ const SearchBar = ({ onSearch, initialFilters }: SearchBarProps) => {
                   <div>
                     <p className="text-sm font-semibold text-gray-900">Infants</p>
                     <p className="text-xs text-gray-500">Under 2</p>
+                    {adults === 0 && <p className="text-xs text-red-500 mt-0.5">Add an adult first</p>}
                   </div>
                   <div className="flex items-center space-x-3">
                     <button
@@ -387,7 +398,8 @@ const SearchBar = ({ onSearch, initialFilters }: SearchBarProps) => {
                     </span>
                     <button
                       onClick={() => setInfants(infants + 1)}
-                      className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-gray-900 transition"
+                      disabled={adults === 0}
+                      className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-gray-900 disabled:opacity-30 disabled:cursor-not-allowed transition"
                     >
                       <span className="text-gray-600">+</span>
                     </button>
@@ -398,6 +410,7 @@ const SearchBar = ({ onSearch, initialFilters }: SearchBarProps) => {
                 <div className="flex items-center justify-between py-4">
                   <div>
                     <p className="text-sm font-semibold text-gray-900">Pets</p>
+                    {adults === 0 && <p className="text-xs text-red-500 mt-0.5">Add an adult first</p>}
                   </div>
                   <div className="flex items-center space-x-3">
                     <button
@@ -412,7 +425,8 @@ const SearchBar = ({ onSearch, initialFilters }: SearchBarProps) => {
                     </span>
                     <button
                       onClick={() => setPets(pets + 1)}
-                      className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-gray-900 transition"
+                      disabled={adults === 0}
+                      className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-gray-900 disabled:opacity-30 disabled:cursor-not-allowed transition"
                     >
                       <span className="text-gray-600">+</span>
                     </button>

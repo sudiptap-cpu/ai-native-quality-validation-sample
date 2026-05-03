@@ -155,8 +155,12 @@ export const createListing = async (
       message: 'Listing created successfully',
       listing,
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Create listing error:', error);
+    if (error.name === 'ValidationError') {
+      res.status(400).json({ error: error.message });
+      return;
+    }
     res.status(500).json({ error: 'Failed to create listing' });
   }
 };
@@ -189,8 +193,12 @@ export const updateListing = async (
       message: 'Listing updated successfully',
       listing: updatedListing,
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Update listing error:', error);
+    if (error.name === 'ValidationError') {
+      res.status(400).json({ error: error.message });
+      return;
+    }
     res.status(500).json({ error: 'Failed to update listing' });
   }
 };

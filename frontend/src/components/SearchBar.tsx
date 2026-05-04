@@ -13,7 +13,7 @@ interface SearchBarProps {
 // Real location data from mock listings
 const LOCATIONS = [
   { city: 'Malibu', state: 'California', country: 'United States' },
-  { city: 'Brooklyn', state: 'New York', country: 'USA' },
+  { city: 'Brooklyn', state: 'New York', country: 'United States' },
   { city: 'Austin', state: 'Texas', country: 'United States' },
   { city: 'Aspen', state: 'Colorado', country: 'United States' },
   { city: 'Miami Beach', state: 'Florida', country: 'United States' },

@@ -1,0 +1,14 @@
+{
+  "name": "airbnb-api-tests",
+  "version": "1.0.0",
+  "description": "API automation tests for the Airbnb-style booking platform using Jest + Pactum.js",
+  "scripts": {
+    "test": "jest --runInBand"
+  },
+  "dependencies": {
+    "pactum": "^3.7.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

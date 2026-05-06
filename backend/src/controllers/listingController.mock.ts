@@ -173,7 +173,7 @@ export const createListing = async (
 ): Promise<void> => {
   try {
     const newListing = {
-      _id: `607f1f77bcf86cd7994390${mockListings.length + 1}`,
+      _id: `607f1f77bcf86cd7994391${String(mockListings.length + 1).padStart(2, '0')}`,
       ...req.body,
       hostId: req.user?.userId,
       rating: 0,

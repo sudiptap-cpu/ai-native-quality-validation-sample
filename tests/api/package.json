@@ -1,0 +1,17 @@
+{
+  "name": "airbnb-api-tests",
+  "version": "1.0.0",
+  "description": "Jest + Pactum API test suite for airbnb-api module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "jest --testPathPattern=src/tests --forceExit --detectOpenHandles"
+  },
+  "dependencies": {
+    "pactum": "^3.7.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}

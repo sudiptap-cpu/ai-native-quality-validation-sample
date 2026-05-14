@@ -1,0 +1,39 @@
+[
+  {
+    "id": "tc-001",
+    "title": "Brooklyn search autocomplete shows United States (not USA)",
+    "userJourney": [
+      "Navigate to https://demo.lambdatestinternal.com/",
+      "Locate the search bar on the homepage",
+      "Click or focus the location/search input field",
+      "Type 'Brooklyn' into the search input",
+      "Wait for the autocomplete/dropdown suggestions to appear",
+      "Verify that Brooklyn's suggestion shows 'United States' as the country (not 'USA')"
+    ],
+    "expectedResult": "The autocomplete dropdown for 'Brooklyn' shows the country as 'United States', not 'USA'"
+  },
+  {
+    "id": "tc-002",
+    "title": "Search for Brooklyn returns listing results",
+    "userJourney": [
+      "Navigate to https://demo.lambdatestinternal.com/",
+      "Click or focus the location/search input field",
+      "Type 'Brooklyn' into the search input",
+      "Select the Brooklyn suggestion from the dropdown",
+      "Verify the search results page shows Brooklyn-related listings"
+    ],
+    "expectedResult": "Searching for Brooklyn navigates to a results page with Brooklyn listings displayed"
+  },
+  {
+    "id": "tc-003",
+    "title": "All location suggestions show consistent United States country name",
+    "userJourney": [
+      "Navigate to https://demo.lambdatestinternal.com/",
+      "Click or focus the location/search input field",
+      "Type 'United States' or browse multiple location suggestions",
+      "Check each visible location suggestion for its country label",
+      "Verify all suggestions use 'United States' consistently (no 'USA' abbreviations)"
+    ],
+    "expectedResult": "All location suggestions display 'United States' uniformly, with no 'USA' abbreviations visible"
+  }
+]

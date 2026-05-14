@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "sessionId": "pr-3820edd3-a340-4aa8-bc9f-f11d7dc5cd81",
+  "entries": [
+    {
+      "testCaseId": "TC-001",
+      "title": "Brooklyn search autocomplete shows United States (not USA)",
+      "status": "passed",
+      "filePath": "tests/ui/tc-001-brooklyn-country-autocomplete.spec.ts",
+      "steps": [
+        {
+          "stepIndex": 0,
+          "action": "navigate",
+          "description": "Navigate to the Airbnb Demo homepage",
+          "selectors": { "primary": "https://demo.lambdatestinternal.com/" }
+        },
+        {
+          "stepIndex": 1,
+          "action": "click",
+          "description": "Click the search destinations input",
+          "selectors": { "primary": "input[placeholder=\"Search destinations\"]" }
+        },
+        {
+          "stepIndex": 2,
+          "action": "type",
+          "description": "Type 'Brooklyn' into the search input",
+          "selectors": { "primary": "input[placeholder=\"Search destinations\"]" }
+        },
+        {
+          "stepIndex": 3,
+          "action": "assert",
+          "description": "Verify the autocomplete dropdown is visible",
+          "selectors": { "primary": "div.absolute.top-full" }
+        },
+        {
+          "stepIndex": 4,
+          "action": "assert",
+          "description": "Verify Brooklyn suggestion shows 'New York, United States' (not 'USA')",
+          "selectors": { "primary": "div.absolute.top-full" }
+        }
+      ],
+      "failureReason": null
+    },
+    {
+      "testCaseId": "TC-002",
+      "title": "Search for Brooklyn returns listing results",
+      "status": "passed",
+      "filePath": "tests/ui/tc-002-brooklyn-search-results.spec.ts",
+      "steps": [
+        {
+          "stepIndex": 0,
+          "action": "navigate",
+          "description": "Navigate to the Airbnb Demo homepage",
+          "selectors": { "primary": "https://demo.lambdatestinternal.com/" }
+        },
+        {
+          "stepIndex": 1,
+          "action": "click",
+          "description": "Click the search destinations input",
+          "selectors": { "primary": "input[placeholder=\"Search destinations\"]" }
+        },
+        {
+          "stepIndex": 2,
+          "action": "type",
+          "description": "Type 'Brooklyn' into the search input",
+          "selectors": { "primary": "input[placeholder=\"Search destinations\"]" }
+        },
+        {
+          "stepIndex": 3,
+          "action": "assert",
+          "description": "Verify the autocomplete dropdown is visible",
+          "selectors": { "primary": "div.absolute.top-full" }
+        },
+        {
+          "stepIndex": 4,
+          "action": "click",
+          "description": "Click the Brooklyn suggestion button in the dropdown",
+          "selectors": { "primary": "div.absolute.top-full button" }
+        },
+        {
+          "stepIndex": 5,
+          "action": "assert",
+          "description": "Verify Brooklyn, New York listing heading is visible on the page",
+          "selectors": { "primary": "h3" }
+        }
+      ],
+      "failureReason": null
+    },
+    {
+      "testCaseId": "TC-003",
+      "title": "All location suggestions show consistent United States country name",
+      "status": "passed",
+      "filePath": "tests/ui/tc-003-location-consistency.spec.ts",
+      "steps": [
+        {
+          "stepIndex": 0,
+          "action": "navigate",
+          "description": "Navigate to the Airbnb Demo homepage",
+          "selectors": { "primary": "https://demo.lambdatestinternal.com/" }
+        },
+        {
+          "stepIndex": 1,
+          "action": "click",
+          "description": "Click the search input to open Popular destinations dropdown",
+          "selectors": { "primary": "input[placeholder=\"Search destinations\"]" }
+        },
+        {
+          "stepIndex": 2,
+          "action": "assert",
+          "description": "Verify the Popular destinations dropdown heading is visible",
+          "selectors": { "primary": "div.absolute.top-full h3" }
+        },
+        {
+          "stepIndex": 3,
+          "action": "assert",
+          "description": "Verify Brooklyn suggestion shows 'New York, United States'",
+          "selectors": { "primary": "div.absolute.top-full button" }
+        },
+        {
+          "stepIndex": 4,
+          "action": "assert",
+          "description": "Verify no dropdown suggestion contains the 'USA' abbreviation",
+          "selectors": { "primary": "div.absolute.top-full" }
+        },
+        {
+          "stepIndex": 5,
+          "action": "assert",
+          "description": "Verify 'United States' appears in the dropdown (positive consistency check)",
+          "selectors": { "primary": "div.absolute.top-full" }
+        }
+      ],
+      "failureReason": null
+    }
+  ]
+}

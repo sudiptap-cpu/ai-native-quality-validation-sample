@@ -1,0 +1,16 @@
+{
+  "testCaseId": "TC-001",
+  "title": "Brooklyn search autocomplete shows United States (not USA)",
+  "userJourney": [
+    "Navigate to https://demo.lambdatestinternal.com/",
+    "Locate the search bar on the homepage",
+    "Click or focus the location/search input field",
+    "Type 'Brooklyn' into the search input",
+    "Wait for the autocomplete/dropdown suggestions to appear",
+    "Verify that Brooklyn's suggestion shows 'United States' as the country (not 'USA')"
+  ],
+  "expectedResult": "The autocomplete dropdown for 'Brooklyn' shows the country as 'United States', not 'USA'",
+  "status": "mcp_unavailable",
+  "notes": "The mcp__playwright__browser_navigate tool (and all mcp__playwright__* tools) returned 'No such tool available'. Browser interaction via MCP is not available in this environment. No screenshots or DOM snapshots were captured. Exploration could not proceed.",
+  "steps": []
+}

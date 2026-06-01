@@ -428,6 +428,7 @@ const BecomeHost = () => {
                       value={formData.maxGuests}
                       onChange={handleChange}
                       min="1"
+                      max="16"
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-airbnb-red"
                     />
